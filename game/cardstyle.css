@@ -1,0 +1,1391 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+* {
+  box-sizing: border-box;
+}
+
+
+
+
+p {
+  font-size: 1em;
+  line-height: 1.4em;
+}
+
+a {
+  color: white;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+blockquote {
+  color: #888;
+  margin: 20px 0 20px 20px;
+}
+
+blockquote:before,
+blockquote:after {
+  content: '"';
+}
+
+input[type=button] {
+  background: blue;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  width: 100px;
+  height: 45px;
+  padding: 5px;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+input.discard {
+  background: maroon;
+}
+
+/*.intro {
+  position: relative;
+  margin: 10px;
+  width: 40%;
+  height: auto;
+  color: #444;
+}*/
+.deck {
+  position: relative;
+  background: transparent;
+  margin: 3em;
+  width: 99%;
+  height: auto;
+}
+
+.card {
+  position: relative;
+  display: inline-block;
+  background: transparent;
+  color: #000;
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.suit {
+  position: relative;
+  color: #AAA;
+  text-align: left;
+}
+
+.card .face {
+  position: absolute;
+  border: 1px solid #333;
+  color: white;
+  width: 100px;
+  height: 100px;
+  line-height: 3em;
+  text-align: center;
+  text-transform: capitalize;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px #555;
+  /* Slim drop shadow so as not to bleed into the bounding box of the next card  */
+}
+
+.card .front {
+  background: olive;
+  transform: rotateX(0deg) rotateY(0deg);
+  transition: all 0.4s ease-in-out;
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+  z-index: 10;
+   color: white;
+  width: 100px;
+  height: 100px;
+}
+
+.card:nth-child(1) .face{
+background-image: url('images/easy.1.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(1) .face.front{
+background-image: url('images/easy.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(2) .face{
+background-image: url('images/easy.2.svg');
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(2) .face.front{
+background-image: url('images/easy.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+
+.card:nth-child(3) .face{
+background-image: url('images/easy.3.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(3) .face.front{
+background-image: url('images/easy.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+
+.card:nth-child(4) .face{
+background-image: url('images/easy.4.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  
+  background-repeat: no-repeat;
+}.card:nth-child(4) .face.front{
+background-image: url('images/easy.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+
+.card:nth-child(5) .face{
+background-image: url('images/easy.5.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(5) .face.front{
+background-image: url('images/easy.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+
+.card:nth-child(6) .face{
+background-image: url('images/easy.6.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(6) .face.front{
+background-image: url('images/easy.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+
+.card:nth-child(7) .face{
+background-image: url('images/easy.7.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(7) .face.front{
+background-image: url('images/easy.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(8) .face.front{
+background-image: url('images/easy.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(8) .face{
+background-image: url('images/easy.8.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(9) .face.front{
+background-image: url('images/easy.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(9) .face{
+background-image: url('images/easy.9.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(10) .face.front{
+background-image: url('images/easy.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(10) .face{
+background-image: url('images/easy.10.svg');
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(11) .face.front{
+background-image: url('images/hard.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(11) .face{
+background-image: url('images/hard.1.svg');
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(12) .face.front{
+background-image: url('images/hard.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(12) .face{
+background-image: url('images/hard.2.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(13) .face.front{
+background-image: url('images/hard.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(13) .face{
+background-image: url('images/hard.3.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(14) .face.front{
+background-image: url('images/hard.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(14) .face{
+background-image: url('images/hard.4.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(15) .face.front{
+background-image: url('images/hard.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(15) .face{
+background-image: url('images/hard.5.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(16) .face.front{
+background-image: url('images/hard.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(16) .face{
+background-image: url('images/hard.6.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(17) .face.front{
+background-image: url('images/hard.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(17) .face{
+background-image: url('images/hard.7.svg');
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(18) .face.front{
+background-image: url('images/hard.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(18) .face{
+background-image: url('images/hard.8.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(19) .face.front{
+background-image: url('images/hard.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(19) .face{
+background-image: url('images/hard.9.svg');
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(20) .face.front{
+background-image: url('images/hard.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(20) .face{
+background-image: url('images/hard.10.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(21) .face.front{
+background-image: url('images/harder.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(21) .face{
+background-image: url('images/harder.1.svg');
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(22) .face.front{
+background-image: url('images/harder.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(22) .face{
+background-image: url('images/harder.2.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(23) .face.front{
+background-image: url('images/harder.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(23) .face{
+background-image: url('images/harder.3.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(24) .face.front{
+background-image: url('images/harder.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(24) .face{
+background-image: url('images/harder.4.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(25) .face.front{
+background-image: url('images/harder.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(25) .face{
+background-image: url('images/harder.5.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(26) .face.front{
+background-image: url('images/harder.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(26) .face{
+background-image: url('images/harder.6.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(27) .face.front{
+background-image: url('images/harder.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(27) .face{
+background-image: url('images/harder.7.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(28) .face.front{
+background-image: url('images/harder.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(28) .face{
+background-image: url('images/harder.8.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(29) .face.front{
+background-image: url('images/harder.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(29) .face{
+background-image: url('images/harder.9.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(30) .face.front{
+background-image: url('images/harder.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(30) .face{
+background-image: url('images/harder.10.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(31) .face.front{
+background-image: url('images/insane.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(31) .face{
+background-image: url('images/insanehard.1.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(32) .face.front{
+background-image: url('images/insane.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(32) .face{
+background-image: url('images/insanehard.2.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(33) .face.front{
+background-image: url('images/insane.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(33) .face{
+background-image: url('images/insanehard.3.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(34) .face.front{
+background-image: url('images/insane.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(34) .face{
+background-image: url('images/insanehard.4.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(35) .face.front{
+background-image: url('images/insane.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(35) .face{
+background-image: url('images/insanehard.5.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(36) .face.front{
+background-image: url('images/insane.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(36) .face{
+background-image: url('images/insanehard.6.svg');
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(37) .face.front{
+background-image: url('images/insane.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(37) .face{
+background-image: url('images/insanehard.7.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(38) .face.front{
+background-image: url('images/insane.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(38) .face{
+background-image: url('images/insanehard.8.svg');
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(39) .face.front{
+background-image: url('images/insane.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(39) .face{
+background-image: url('images/insanehard.9.svg');
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(40) .face.front{
+background-image: url('images/insane.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(40) .face{
+background-image: url('images/insanehard.10.svg');
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(41) .face.front{
+background-image: url('images/normal.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(41) .face{
+background-image: url('images/normal.1.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(42) .face.front{
+background-image: url('images/normal.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(42) .face{
+background-image: url('images/normal.2.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(43) .face.front{
+background-image: url('images/normal.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(43) .face{
+    background-image: url('images/normal.3.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(44) .face.front{
+background-image: url('images/normal.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(44) .face{
+    background-image: url('images/normal.4.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(45) .face.front{
+background-image: url('images/normal.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(45) .face{
+background-image: url('images/normal.5.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(46) .face.front{
+background-image: url('images/normal.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(46) .face{
+background-image: url('images/normal.6.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(47) .face.front{
+background-image: url('images/normal.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(47) .face{
+background-image: url('images/normal.7.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(48) .face.front{
+background-image: url('images/normal.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(48) .face{
+background-image: url('images/normal.8.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(49) .face.front{
+background-image: url('images/normal.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(49) .face{
+background-image: url('images/normal.9.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(50) .face.front{
+background-image: url('images/normal.png');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(50) .face{
+background-image: url('images/normal.10.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(51) .face.front{
+background-image: url('images/pot.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(51) .face{
+background-image: url('images/goldpot.1.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(52) .face.front{
+background-image: url('images/pot.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(52) .face{
+background-image: url('images/goldpot.2.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(53) .face.front{
+background-image: url('images/pot.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(53) .face{
+background-image: url('images/goldpot.3.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(54) .face.front{
+background-image: url('images/pot.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(54) .face{
+background-image: url('images/goldpot.4.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(55) .face.front{
+background-image: url('images/pot.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(55) .face{
+background-image: url('images/goldpot.5.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+
+
+
+
+
+.card:nth-child(56) .face.front{
+background-image: url('images/mark.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(56) .face{
+background-image: url('images/question.1.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(57) .face.front{
+background-image: url('images/mark.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(57) .face{
+background-image: url('images/question.2.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(58) .face.front{
+background-image: url('images/mark.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(58) .face{
+background-image: url('images/question.3.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(59) .face.front{
+background-image: url('images/mark.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(59) .face{
+background-image: url('images/question.4.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}.card:nth-child(60) .face.front{
+background-image: url('images/mark.jpeg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+.card:nth-child(60) .face{
+background-image: url('images/question.5.svg');
+
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  background-repeat: no-repeat;
+}
+/* Deal cards and apply some random spin  */
+@-webkit-keyframes drop1 {
+  0% {
+    transform: scale(2, 2) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(-25deg);
+  }
+  100% {
+    transform: scale(0.97, 0.97) rotateX(0deg) rotateY(0deg) rotateZ(-45deg);
+  }
+}
+@keyframes drop1 {
+  0% {
+    transform: scale(2, 2) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(-25deg);
+  }
+  100% {
+    transform: scale(0.97, 0.97) rotateX(0deg) rotateY(0deg) rotateZ(-45deg);
+  }
+}
+@-webkit-keyframes drop2 {
+  0% {
+    transform: scale(2, 2) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(-10deg);
+  }
+  100% {
+    transform: scale(0.97, 0.97) rotateX(0deg) rotateY(0deg) rotateZ(-20deg);
+  }
+}
+@keyframes drop2 {
+  0% {
+    transform: scale(2, 2) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(-10deg);
+  }
+  100% {
+    transform: scale(0.97, 0.97) rotateX(0deg) rotateY(0deg) rotateZ(-20deg);
+  }
+}
+@-webkit-keyframes drop3 {
+  0% {
+    transform: scale(2, 2) rotateX(0deg) rotateY(0deg) rotateZ(-50deg);
+  }
+  50% {
+    transform: rotateX(0deg) rotateY(50deg) rotateZ(25deg);
+  }
+  100% {
+    transform: scale(0.98, 0.98) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+}
+@keyframes drop3 {
+  0% {
+    transform: scale(2, 2) rotateX(0deg) rotateY(0deg) rotateZ(-50deg);
+  }
+  50% {
+    transform: rotateX(0deg) rotateY(50deg) rotateZ(25deg);
+  }
+  100% {
+    transform: scale(0.98, 0.98) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+}
+@-webkit-keyframes drop4 {
+  0% {
+    transform: scale(2, 2) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(10deg);
+  }
+  100% {
+    transform: scale(0.98, 0.98) rotateX(0deg) rotateY(0deg) rotateZ(20deg);
+  }
+}
+@keyframes drop4 {
+  0% {
+    transform: scale(2, 2) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(10deg);
+  }
+  100% {
+    transform: scale(0.98, 0.98) rotateX(0deg) rotateY(0deg) rotateZ(20deg);
+  }
+}
+@-webkit-keyframes drop5 {
+  0% {
+    transform: scale(2, 2) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: rotateX(0deg) rotateY(50deg) rotateZ(-10deg);
+  }
+  100% {
+    transform: scale(0.98, 0.98) rotateX(0deg) rotateY(0deg) rotateZ(40deg);
+  }
+}
+@keyframes drop6 {
+  0% {
+    transform: scale(2, 2) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: rotateX(0deg) rotateY(50deg) rotateZ(-10deg);
+  }
+  100% {
+    transform: scale(0.98, 0.98) rotateX(0deg) rotateY(0deg) rotateZ(40deg);
+  }
+}
+.card .back {
+  background: purple;
+  transform: rotateX(0deg) rotateY(180deg);
+  transform-style: preserve-3d;
+  transition: all 0.4s ease-in-out;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  z-index: 5;
+}
+
+/* Flip the card and apply easing */
+.card.flip .front {
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+  transition: all 0.4s ease-in-out;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  z-index: 900;
+}
+
+.card.flip .back {
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+  transition: all 0.4s ease-in-out;
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+  z-index: 1000;
+}

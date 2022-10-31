@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MonoCalculus board</title>
+    <meta charset="UTF-8">
+    <!--Cascade Style Sheet-->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jquery-te/1.4.0/jquery-te.css'>
+    <link rel="stylesheet" href="./win.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./light.css">
+    <link href="example.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Ubuntu+Condensed" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="./stop.css">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oswald:300,400,500'>
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no; minimum-scale=0; maximum-scale=1;">
+    <link rel="stylesheet" href="./cardstyle.css">
+    <!--End of Cascade Style Sheet-->
+    <style>
+        canvas {}
+
+        div.b {
+            position: absolute;
+            right: 100px;
+            width: 200px;
+            height: 200px;
+
+        }
+
+        .centerr {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+            width: 60%;
+        }
+
+
+
+
+        button {
+            position: absolute;
+            right: 20px;
+            border-radius: 19px;
+            border: 6px solid #FFFFFF;
+            box-shadow: 1px 1px 6px 7px rgba(255, 255, 255, 0.34);
+            background: hsl(250, 50%, 100%);
+            padding: 1rem 3.5rem;
+
+            background: hsl(250, 50%, 100%);
+            font-weight: bold;
+            font-size: 2rem;
+            font-family: inherit;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            color: #FFFFFF;
+            background-color: #1d60c9;
+        }
+
+        #group3 {
+            position: absolute;
+            z-index: 9;
+            background-color: #f1f1f1;
+            text-align: center;
+            border: 1px solid #d3d3d3;
+            width: 40px;
+            height: 40px;
+        }
+
+        #m {
+            position: absolute;
+            z-index: 9;
+            background-color: orange;
+            text-align: center;
+            border: 1px solid #d3d3d3;
+            width: 40px;
+            height: 40px;
+        }
+
+
+
+
+
+        #group4 {
+            position: absolute;
+            z-index: 9;
+            background-color: #f1f1f1;
+            text-align: center;
+            border: 1px solid #d3d3d3;
+            width: 40px;
+            height: 40px;
+        }
+
+        #y {
+            position: absolute;
+            z-index: 9;
+            background-color: blue;
+            text-align: center;
+            border: 1px solid #d3d3d3;
+            width: 40px;
+            height: 40px;
+        }
+
+
+
+
+
+
+
+
+        #mydiv {
+            position: absolute;
+            z-index: 9;
+            background-color: #f1f1f1;
+            text-align: center;
+            border: 1px solid #d3d3d3;
+            width: 40px;
+            height: 40px;
+        }
+
+        #div {
+            position: absolute;
+            z-index: 9;
+            background-color: white;
+            text-align: center;
+            border: 1px solid #d3d3d3;
+            width: 40px;
+            height: 40px;
+        }
+
+        #mydivheader {
+            padding: 10px;
+            cursor: move;
+            z-index: 10;
+            background-color: #bf0a22;
+            color: #fff;
+        }
+
+        #divheader {
+            padding: 10px;
+            cursor: move;
+            z-index: 10;
+            background-color: magenta;
+            color: #fff;
+        }
+
+        @keyframes bang {
+            from {
+                transform: translate3d(0, 0, 0);
+                opacity: 1;
+            }
+        }
+
+        .hoverme {
+            width: 150px;
+
+            margin: 150px auto 0;
+            text-align: center;
+            padding: 10px 0;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .hoverme span {
+            color: #333;
+            font-size: 0.9em;
+        }
+
+        .hoverme i {
+            position: absolute;
+            display: block;
+            left: 50%;
+            top: 0;
+            width: 3px;
+            height: 8px;
+            background: red;
+            opacity: 0;
+        }
+
+    </style>
+
+
+
+
+</head>
+
+
+
+<body>
+
+    <ul class="lightrope">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <br><br><br>
+    <center>
+        <marquee>
+            <h1>Monocalculus</h1>
+            <h2>BY : </h2>
+        </marquee>
+
+    </center>
+
+    <!--  Cards -->
+
+
+
+
+    <div class="deck">
+        <div class="card card1">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card2">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card3">
+            <div class="face front"></div>
+            <div class="face back"> </div>
+        </div>
+        <div class="card card4">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card5">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card6">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card7">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+
+        <div class="card card8">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card9">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card10">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card11">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card12">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card13">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card14">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card15">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card16">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card17">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card18">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card19">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card20">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card21">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card22">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card23">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card24">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card25">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card26">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card27">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card28">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card29">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card30">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card31">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card32">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card33">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card34">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card35">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card36">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card37">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card38">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card39">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card40">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card41">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card42">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card43">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card44">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card45">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card46">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card47">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card48">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card49">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card50">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card51">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card52">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card53">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card54">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card55">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card56">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card57">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card58">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card59">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <div class="card card60">
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+    </div>
+
+    <!--  End Of Cards -->
+    <!--  Start Of Movable Image-->
+    <!-- Group 1-->
+    <div id="mydiv">
+        <div id="">Group 1</div>
+        <img class="rounded-corners" style='height: 140%; width: 140%; object-fit: contain' src="images/bear.jpeg" alt="">
+    </div>
+
+
+    <script>
+        //Make the DIV element draggagle:
+        dragElement(document.getElementById("mydiv"));
+
+        function dragElement(elmnt) {
+            var pos1 = 0,
+                pos2 = 0,
+                pos3 = 0,
+                pos4 = 0;
+            if (document.getElementById(elmnt.id + "header")) {
+                /* if present, the header is where you move the DIV from:*/
+                document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+            } else {
+                /* otherwise, move the DIV from anywhere inside the DIV:*/
+                elmnt.onmousedown = dragMouseDown;
+            }
+
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // get the mouse cursor position at startup:
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                // call a function whenever the cursor moves:
+                document.onmousemove = elementDrag;
+            }
+
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // calculate the new cursor position:
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                // set the element's new position:
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                /* stop moving when mouse button is released:*/
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
+
+    </script>
+    <!<!-- Group 2 -->
+
+
+        <div id="div">
+            <div id="">Group 2</div>
+            <img class="rounded-corners" style='height: 140%; width: 140%; object-fit: contain' src="images/pig.jpeg" alt="">
+        </div>
+
+
+        <script>
+            //Make the DIV element draggagle:
+            dragElement(document.getElementById("div"));
+
+            function dragElement(elmnt) {
+                var pos1 = 0,
+                    pos2 = 0,
+                    pos3 = 0,
+                    pos4 = 0;
+                if (document.getElementById(elmnt.id + "header")) {
+                    /* if present, the header is where you move the DIV from:*/
+                    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+                } else {
+                    /* otherwise, move the DIV from anywhere inside the DIV:*/
+                    elmnt.onmousedown = dragMouseDown;
+                }
+
+                function dragMouseDown(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    // get the mouse cursor position at startup:
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    document.onmouseup = closeDragElement;
+                    // call a function whenever the cursor moves:
+                    document.onmousemove = elementDrag;
+                }
+
+                function elementDrag(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    // calculate the new cursor position:
+                    pos1 = pos3 - e.clientX;
+                    pos2 = pos4 - e.clientY;
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    // set the element's new position:
+                    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+                }
+
+                function closeDragElement() {
+                    /* stop moving when mouse button is released:*/
+                    document.onmouseup = null;
+                    document.onmousemove = null;
+                }
+            }
+
+        </script>
+
+
+        <!-- Group 3 -->
+
+        <div id="group3">
+            <div id="">Group 3</div>
+            <img class="rounded-corners" style='height: 140%; width: 140%; object-fit: contain' src="images/lion.jpeg" alt="">
+
+        </div>
+
+
+        <script>
+            //Make the DIV element draggagle:
+            dragElement(document.getElementById("group3"));
+
+            function dragElement(elmnt) {
+                var pos1 = 0,
+                    pos2 = 0,
+                    pos3 = 0,
+                    pos4 = 0;
+                if (document.getElementById(elmnt.id + "header")) {
+                    /* if present, the header is where you move the DIV from:*/
+                    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+                } else {
+                    /* otherwise, move the DIV from anywhere inside the DIV:*/
+                    elmnt.onmousedown = dragMouseDown;
+                }
+
+                function dragMouseDown(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    // get the mouse cursor position at startup:
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    document.onmouseup = closeDragElement;
+                    // call a function whenever the cursor moves:
+                    document.onmousemove = elementDrag;
+                }
+
+                function elementDrag(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    // calculate the new cursor position:
+                    pos1 = pos3 - e.clientX;
+                    pos2 = pos4 - e.clientY;
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    // set the element's new position:
+                    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+                }
+
+                function closeDragElement() {
+                    /* stop moving when mouse button is released:*/
+                    document.onmouseup = null;
+                    document.onmousemove = null;
+                }
+            }
+
+        </script>
+
+        <!-- Group 4 -->
+        <div id="group4">
+            <div id="">Group 4</div>
+            <img class="rounded-corners" style='height: 140%; width: 140%; object-fit: contain' src="images/zebra.jpeg" alt="">
+
+        </div>
+
+
+        <script>
+            //Make the DIV element draggagle:
+            dragElement(document.getElementById("group4"));
+
+            function dragElement(elmnt) {
+                var pos1 = 0,
+                    pos2 = 0,
+                    pos3 = 0,
+                    pos4 = 0;
+                if (document.getElementById(elmnt.id + "header")) {
+                    /* if present, the header is where you move the DIV from:*/
+                    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+                } else {
+                    /* otherwise, move the DIV from anywhere inside the DIV:*/
+                    elmnt.onmousedown = dragMouseDown;
+                }
+
+                function dragMouseDown(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    // get the mouse cursor position at startup:
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    document.onmouseup = closeDragElement;
+                    // call a function whenever the cursor moves:
+                    document.onmousemove = elementDrag;
+                }
+
+                function elementDrag(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    // calculate the new cursor position:
+                    pos1 = pos3 - e.clientX;
+                    pos2 = pos4 - e.clientY;
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    // set the element's new position:
+                    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+                }
+
+                function closeDragElement() {
+                    /* stop moving when mouse button is released:*/
+                    document.onmouseup = null;
+                    document.onmousemove = null;
+                }
+            }
+
+        </script>
+        <!-- End of Movable Image  -->
+
+        <!--Start og Board  -->
+
+        <div class="table">
+            <div class="board">
+                <div class="center">
+                    <div class="community-chest-deck">
+
+                        <div class="deck"></div>
+                    </div>
+                    <h1 class="title">MONOCALCULUS</h1>
+                    <div class="chance-deck">
+
+                        <div class="deck"></div>
+                    </div>
+                </div>
+
+                <div class="space corner go">
+                    <div class="container">
+                        <div class="instructions"></div>
+                        <div class="go-word">go</div>
+                    </div>
+                    <div class="arrow fa fa-long-arrow-left"></div>
+                </div>
+
+                <div class="row horizontal-row bottom-row">
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar red"></div>
+                            <img class="centerr" src="images/harder.png" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar dark-blue"></div>
+                            <img class="centerr" src="images/easy.png" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space chance">
+                        <div class="container">
+                            <div class="name"></div>
+                            <i class="drawing fa fa-question"></i>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar green"></div>
+                            <img class="centerr" src="images/normal.png" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar yellow"></div>
+                            <img class="centerr" src="images/hard.jpeg" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar dark-blue"></div>
+                            <img class="centerr" src="images/easy.png" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar red"></div>
+                            <img class="centerr" src="images/harder.png" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space community-chest">
+                        <div class="container">
+                            <div class="name"></div>
+                            <img src="images/pot.jpeg" alt="">
+                            <i class=""></i>
+                            <div class="instructions"></div>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar purple"></div>
+                            <img class="centerr" src="images/insane.jpeg" alt="">
+
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space corner jail">
+                    <div class="just">Just</div>
+                    <div class="drawing">
+                        <div class="container">
+                            <div class="name">In</div>
+                            <div class="window">
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <i class="person fa fa-frown-o"></i>
+                            </div>
+                            <div class="name">Jail</div>
+                        </div>
+                    </div>
+                    <div class="visiting"></div>
+                </div>
+
+                <div class="row vertical-row left-row">
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar dark-blue"></div>
+                            <img class="centerr" src="images/easy.png" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar green"></div>
+                            <img class="centerr" src="images/normal.png" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space community-chest">
+                        <div class="container">
+                            <div class="name"></div>
+
+                            <img src="images/pot.jpeg" alt="">
+                            <i class="d"></i>
+                            <div class="instructions">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar yellow"></div>
+
+                            <img class="centerr" src="images/hard.jpeg" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar dark-blue"></div>
+                            <img class="centerr" src="images/easy.png" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar purple"></div>
+                            <img class="centerr" src="images/insane.jpeg" alt="">
+
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space chance">
+                        <div class="container">
+                            <div class="name"></div>
+                            <i class="drawing fa fa-question"></i>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar dark-blue"></div>
+                            <img class="centerr" src="images/easy.png" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar yellow"></div>
+
+                            <img class="centerr" src="images/hard.jpeg" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space corner free-parking">
+                    <div class="container">
+                        <div class="name">Free</div>
+                        <i class="drawing fa fa-car"></i>
+                        <div class="name">Parking</div>
+                    </div>
+                </div>
+
+                <div class="row horizontal-row top-row">
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar red"></div>
+                            <img class="centerr" src="images/harder.png" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space chance">
+                        <div class="container">
+                            <div class="name"></div>
+                            <i class="drawing fa fa-question"></i>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar green"></div>
+                            <img class="centerr" src="images/normal.png" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar red"></div>
+                            <img class="centerr" src="images/harder.png" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space railroad">
+                        <div class="container">
+                            <div class="name"></div>
+                            <i class=""></i>
+                            <img src="images/pot.jpeg" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar dark-blue"></div>
+                            <img class="centerr" src="images/easy.png" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar yellow"></div>
+
+                            <img class="centerr" src="images/hard.jpeg" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar dark-blue"></div>
+                            <img class="centerr" src="images/easy.png" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar green"></div>
+                            <img class="centerr" src="images/normal.png" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space corner go-to-jail">
+                    <div class="container">
+                        <div class="name">Go To</div>
+                        <i class="drawing fa fa-gavel"></i>
+                        <div class="name"></div>
+                    </div>
+                </div>
+
+                <div class="row vertical-row right-row">
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar green"></div>
+                            <img class="centerr" src="images/normal.png" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar purple"></div>
+                            <img class="centerr" src="images/insane.jpeg" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space community-chest">
+                        <div class="container">
+                            <div class="name"></div>
+                            <img src="images/pot.jpeg" alt="">
+                            <i class="d"></i>
+                            <div class="instructions"></div>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar green"></div>
+                            <img class="centerr" src="images/normal.png" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar red"></div>
+                            <img class="centerr" src="images/harder.png" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space chance">
+                        <div class="container">
+                            <div class="name"></div>
+                            <i class="drawing fa fa-question"></i>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar yellow"></div>
+                            <img class="centerr" src="images/hard.jpeg" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar green"></div>
+                            <img class="centerr" src="images/normal.png" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                    <div class="space property">
+                        <div class="container">
+                            <div class="color-bar dark-blue"></div>
+                            <img class="centerr" src="images/easy.png" alt="">
+                            <div class="price"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <!--Start of Buttons-->
+
+
+
+
+                <div class="b">
+                    <!-- svg describing the board -->
+                    <svg viewBox="0 0 100 100" width="200" height="200"></svg>
+                    <!-- canvas describing the dice -->
+                    <canvas width="200" height="200"></canvas>
+                    <div class="button">
+                        <button>Roll</button>
+                    </div><br><br><br><br>
+
+                    <div>
+
+                        <button class='hoverme'>
+                            <span>
+                                WINNER
+                            </span>
+
+                        </button>
+
+                        <!--End of Buttons->   
+            
+          <!--End of Board-->
+
+                        <!-- JavaSCRIPT-->
+                        <script src='https://unpkg.com/zdog@1/dist/zdog.dist.min.js'></script>
+                        <script src='https://unpkg.com/animejs@3.1.0/lib/anime.min.js'></script>
+                        <script src="./script.js"></script>
+                        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+                        <script src="./cardscript.js"></script>
+
+                        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+
+                        <script src="./stop.js"></script>
+</body>
+
+</html>
